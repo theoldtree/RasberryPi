@@ -2,8 +2,6 @@ import time
 import board
 import adafruit_dht
 
-
-GPIO.cleanup()
 dhtDevice = adafruit_dht.DHT11(board.D18)
 
 while True:
@@ -15,5 +13,6 @@ while True:
     except KeyboardInterrupt:
         pass
         print("Terminated by Keyboard")
+        GPIO.cleanup()
         exit()
                                             
